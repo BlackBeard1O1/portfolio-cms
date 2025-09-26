@@ -126,14 +126,14 @@ portfolio-cms/
 
 ---
 ## 🏗️ System Architecture (High-Level)
-
+```
    The system follows a layered microservice-inspired architecture:
-         - **Angular Frontend** → Deployed to AWS S3 + CloudFront
-         - **Spring Boot Backend** → Running on EC2 (or Docker/K8s)
-         - **PostgreSQL** → Managed on AWS RDS
-         - **CI/CD** → GitHub Actions → Docker Hub → AWS
-         - **Monitoring** → CloudWatch + Splunk
-
+         - Angular Frontend → Deployed to AWS S3 + CloudFront
+         - Spring Boot Backend → Running on EC2 (or Docker/K8s)
+         - PostgreSQL → Managed on AWS RDS
+         - CI/CD → GitHub Actions → Docker Hub → AWS
+         - Monitoring → CloudWatch + Splunk
+```
 ---
 
 ## 📈 Development Workflow
