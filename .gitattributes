@@ -1,0 +1,14 @@
+# Normalize all text files to use LF line endings in repo
+* text=auto
+
+# Force LF for shell scripts, Docker, YAML, etc.
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf
+*.md text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+
+# Force CRLF for Windows-only files (optional)
+*.bat text eol=crlf

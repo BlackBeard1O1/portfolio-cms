@@ -1,0 +1,40 @@
+# === General ===
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# === Git ===
+*.orig
+
+# === Java (Spring Boot) ===
+/backend/target/
+*.class
+*.jar
+*.war
+*.iml
+
+# === Node / Angular ===
+/frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# === Environment ===
+.env
+*.env
+.env.*.local
+
+# === OS-specific ===
+*.swp
+*~
+
+# === IntelliJ / VSCode / Eclipse ===
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# === CI/CD ===
+/.github/workflows/*.secrets.*
