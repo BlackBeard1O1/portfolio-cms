@@ -4,6 +4,16 @@ A **full-stack personal portfolio CMS** built with **Spring Boot (Java)**, **Ang
 The system enables dynamic project and portfolio management with categories, blogs, certifications, and a modern, responsive UI.
 
 ---
+## 🌟 Why This Project?
+
+Most portfolios only show static HTML/CSS.  
+**This project demonstrates how I build & operate a production-ready system end-to-end**, covering:  
+   - System Design & Architecture  
+   - Full-Stack Development (Java + Angular)  
+   - CI/CD & Cloud Deployment (Docker, GitHub Actions, AWS)  
+   - Monitoring & Observability (CloudWatch, Splunk)  
+
+--- 
 
 ## 🚀 Features
 
@@ -67,11 +77,62 @@ portfolio-cms/
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Angular, TypeScript, SCSS  
-- **Backend:** Java 17, Spring Boot, Spring Security, JPA/Hibernate  
-- **Database:** PostgreSQL  
-- **DevOps:** Docker, GitHub Actions, AWS (future deployment)  
-- **Testing:** JUnit 5, Mockito, Jasmine/Karma (Angular)  
+→ Frontend
+      - Angular • TypeScript • SCSS
+      - Responsive Design (Mobile-First)
+
+→ Backend
+      - Java 17 • Spring Boot • Spring Security • Spring Data JPA / Hibernate
+
+      - RESTful APIs • Validation • Exception Handling
+
+→ Database
+
+      - PostgreSQL • ERD-based schema design
+
+      - Liquibase / Flyway (future DB migrations)
+
+→ CI/CD & DevOps
+
+      - GitHub Actions (CI/CD pipelines)
+
+      - Docker (backend & frontend containers)
+
+      - Kubernetes (K8s manifests for deployments, services, ingress)
+
+→ Cloud & Monitoring
+
+      - AWS (EC2, S3, RDS) — Hosting & Storage
+
+      - AWS CloudWatch — Logs & Metrics
+
+      - Splunk — Centralized Log Analytics
+
+→ Collaboration & Management
+
+      - Jira (Agile sprints, backlog, epics, dependencies)
+
+      - Figma (Wireframes & UI/UX prototyping)
+
+      - Confluence (Documentation integration)
+
+→ Other
+
+      - Swagger / OpenAPI (API documentation)
+
+      - JWT Authentication + BCrypt Password Hashing
+
+      - Unit & Integration Testing (JUnit, Mockito, Jasmine/Karma)
+
+---
+## 🏗️ System Architecture (High-Level)
+
+   The system follows a layered microservice-inspired architecture:
+      - **Angular Frontend** → Deployed to AWS S3 + CloudFront
+      - **Spring Boot Backend** → Running on EC2 (or Docker/K8s)
+      - **PostgreSQL** → Managed on AWS RDS
+      - **CI/CD** → GitHub Actions → Docker Hub → AWS
+      - **Monitoring** → CloudWatch + Splunk
 
 ---
 
@@ -133,11 +194,11 @@ Here’s the flow:
 
     ✅ Frontend Core (Angular setup + UI components)
 
-    ✅ CI/CD integration
+    ⬛ CI/CD integration
 
-    ✅ AWS Deployment
+    ⬛ AWS Deployment
 
-    ✅ Testimonials, LinkedIn API integration, Contact scheduling           
+    ⬛ Testimonials, LinkedIn API integration, Contact scheduling           
 
 ## 📜 License
     This project is licensed under the MIT License – see LICENSE for details.
