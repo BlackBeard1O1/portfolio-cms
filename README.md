@@ -36,29 +36,31 @@ The system enables dynamic project and portfolio management with categories, blo
 
 ## 📂 Project Structure
 
+```bash
 portfolio-cms/
-│── backend/ # Spring Boot backend
-│ ├── src/main/java/com/portfolio/cms/Application.java
-│ ├── pom.xml
-│ └── Dockerfile
+├── backend/               # Spring Boot backend
+│   ├── src/main/java/com/portfolio/cms/Application.java
+│   ├── pom.xml
+│   └── Dockerfile
 │
-│── frontend/ # Angular frontend
-│ ├── src/
-│ ├── angular.json
-│ └── Dockerfile
+├── frontend/              # Angular frontend
+│   ├── src/
+│   ├── angular.json
+│   └── Dockerfile
 │
-│── docs/ # Documentation
-│ ├── architecture-diagram.png
-│ ├── database-erd.png
-│ └── wireframes.png
+├── docs/                  # Documentation
+│   ├── architecture-diagram.png
+│   ├── database-erd.png
+│   └── wireframes.png
 │
-│── .github/workflows/ # CI/CD pipelines
-│ └── ci.yml
+├── .github/workflows/     # CI/CD pipelines
+│   └── ci.yml
 │
-│── .gitignore
-│── .gitattributes
-│── LICENSE
-│── README.md
+├── .gitignore
+├── .gitattributes
+├── LICENSE
+└── README.md
+```
 
 
 ---
