@@ -177,6 +177,9 @@ Here’s the flow:
    - Logs & metrics tracked with CloudWatch / Splunk.
    - Jira captures bugs & enhancements → fed back into new sprints.
 
+
+---- 
+
 ## 📋 How to Run Locally
    - Prerequisites
         → Java 17+
