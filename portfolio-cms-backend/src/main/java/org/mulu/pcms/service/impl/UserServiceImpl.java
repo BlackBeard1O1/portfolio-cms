@@ -8,33 +8,16 @@ import org.mulu.pcms.entity.User;
 import org.mulu.pcms.mapper.UserMapper;
 import org.mulu.pcms.repository.UserRepository;
 import org.mulu.pcms.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
     private final UserMapper userMapper;
-    private final BCryptPasswordEncoder passwordEncoder;
-
-    @Autowired
-    public UserServiceImpl(UserRepository userRepository, UserMapper userMapper) {
-        this.userRepository = userRepository;
-        this.userMapper = userMapper;
-        this.passwordEncoder = new BCryptPasswordEncoder();
-    }
-
-    @Override
-    public UserResponseDTO createUser(UserRequestDTO dto) {
-        // Always "USER" role
-        User user = userMapper.toEntity(dto);
-        user.setPassword(passwordEncoder.encode(dto.getPassword()));
-        User saved = userRepository.save(user);
-        return userMapper.toDto(saved);
-    }
-
 
     @Override
     public List<UserResponseDTO> getAllUsers() {
@@ -60,17 +43,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserResponseDTO updateUser(Long id, UserRequestDTO dto) {
+
         User existing = userRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("User not found with id: " + id));
 
-        userMapper.updateEntityFromDto(dto, existing);
-
-        if (dto.getPassword() != null && !dto.getPassword().isBlank()) {
-            existing.setPassword(passwordEncoder.encode(dto.getPassword()));
-        }
-
-        User updated = userRepository.save(existing);
-        return userMapper.toDto(updated);
+        User updatedUser = userMapper.updateEntityFromDto(dto, existing);
+        User saved = userRepository.save(updatedUser);
+        return userMapper.toDto(saved);
     }
 
     @Override

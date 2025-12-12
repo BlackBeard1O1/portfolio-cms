@@ -14,6 +14,5 @@ public class ProjectResponseDTO {
     private String imageUrl;
     private String githubLink;
     private String demoLink;
-    private String categoryName;
     private String user;
 }

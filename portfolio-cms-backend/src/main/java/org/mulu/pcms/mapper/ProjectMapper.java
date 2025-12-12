@@ -1,5 +1,7 @@
 package org.mulu.pcms.mapper;
 
+import java.time.LocalDate;
+
 import org.mulu.pcms.dto.request.ProjectRequestDTO;
 import org.mulu.pcms.dto.response.ProjectResponseDTO;
 import org.mulu.pcms.entity.Category;
@@ -21,6 +23,7 @@ public class ProjectMapper {
         entity.setImageUrl(project.getImageUrl());
         entity.setGithubLink(project.getGithubLink());
         entity.setDemoLink(project.getDemoLink());
+        entity.setDateCreated(LocalDate.now());
         entity.setCategory(category);
         entity.setUser(user);
 
@@ -39,7 +42,6 @@ public class ProjectMapper {
         responseDTO.setImageUrl(savedProject.getImageUrl());
         responseDTO.setGithubLink(savedProject.getGithubLink());
         responseDTO.setDemoLink(savedProject.getDemoLink());
-        responseDTO.setCategoryName(savedProject.getCategory().getName());
         responseDTO.setUser(savedProject.getUser().getEmail());
 
         return responseDTO;
@@ -55,6 +57,8 @@ public class ProjectMapper {
         existingProject.setImageUrl(project.getImageUrl());
         existingProject.setGithubLink(project.getGithubLink());
         existingProject.setDemoLink(project.getDemoLink());
+        existingProject.setDateCreated(LocalDate.now());
+        existingProject.setDateUpdated(LocalDate.now());
 
         return existingProject;
     }

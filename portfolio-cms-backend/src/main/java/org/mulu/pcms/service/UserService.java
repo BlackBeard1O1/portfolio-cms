@@ -6,7 +6,7 @@ import org.mulu.pcms.dto.response.UserResponseDTO;
 
 public interface UserService {
 
-    UserResponseDTO createUser(UserRequestDTO dto);
+    // UserResponseDTO createUser(UserRequestDTO dto);
 
     List<UserResponseDTO> getAllUsers();
 

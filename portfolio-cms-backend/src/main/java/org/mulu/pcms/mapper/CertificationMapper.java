@@ -15,6 +15,8 @@ public class CertificationMapper {
         Certification certificationEntity = new Certification();
         certificationEntity.setName(certification.getName());
         certificationEntity.setImageUrl(certification.getImageUrl());
+        certificationEntity.setInstitution(certification.getInstitution());
+        certificationEntity.setCertificateUrl(certification.getCertificateUrl());
         certificationEntity.setDateObtained(certification.getDateObtained());
 
         return certificationEntity;

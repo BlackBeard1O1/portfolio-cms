@@ -7,7 +7,7 @@ import org.mulu.pcms.dto.response.BlogResponseDTO;
 
 public interface BlogService {
 
-    BlogResponseDTO createBlog(BlogRequestDTO blog);
+    BlogResponseDTO createBlog(BlogRequestDTO blog, String userEmail);
 
     List<BlogResponseDTO> getAllBlogs();
 

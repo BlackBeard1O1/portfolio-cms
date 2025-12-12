@@ -36,7 +36,7 @@ public class CategoryMapper {
                 savedCategory.getDescription());
     }
 
-    public void updateCategory(Category category, Category existingCategory) {
+    public void updateCategory(CategoryRequestDTO category, Category existingCategory) {
         if (category == null || existingCategory == null) {
             throw new IllegalArgumentException("Category and existingCategory must not be null");
         }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.mulu.pcms.dto.request.BlogRequestDTO;
 import org.mulu.pcms.dto.response.BlogResponseDTO;
-import org.mulu.pcms.dto.response.UserResponseDTO;
 import org.mulu.pcms.entity.Blog;
 import org.mulu.pcms.entity.User;
 import org.mulu.pcms.mapper.BlogMapper;
@@ -19,25 +18,19 @@ public class BlogServiceImpl implements BlogService {
 
     private final BlogRepository blogRepository;
     private final BlogMapper blogMapper;
-    private final UserServiceImpl userService;
-    private final UserMapper userMapper;
+    private final UserRepository userRepository;
 
-    public BlogServiceImpl(BlogRepository blogRepository, BlogMapper blogMapper, UserServiceImpl userService, UserMapper userMapper, UserRepository userRepository) {
+    public BlogServiceImpl(BlogRepository blogRepository, BlogMapper blogMapper, UserServiceImpl userService,
+            UserMapper userMapper, UserRepository userRepository) {
         this.blogRepository = blogRepository;
         this.blogMapper = blogMapper;
-        this.userService = userService;
-        this.userMapper = userMapper;
+        this.userRepository = userRepository;
     }
 
     @Override
-    public BlogResponseDTO createBlog(BlogRequestDTO blog) {
-        // must be replaced with the user in session instead of default user later
-        // update to get user from session later
-        UserResponseDTO userDTO = userService.getUserByEmail("henos.job@gmail.com");
-        if (userDTO == null) {
-            throw new RuntimeException("User not found");
-        }
-        User user = userMapper.toEntity(userDTO);
+    public BlogResponseDTO createBlog(BlogRequestDTO blog, String userEmail) {
+        User user = userRepository.findByEmail(userEmail)
+                .orElseThrow(() -> new RuntimeException("User not found"));
 
         Blog newBlog = blogMapper.toEntity(blog, user);
 
@@ -49,11 +42,9 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public List<BlogResponseDTO> getAllBlogs() {
         List<Blog> blogs = blogRepository.findAll();
-
         return blogs.stream()
                 .map(blogMapper::toDto)
                 .toList();
-
     }
 
     @Override

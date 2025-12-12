@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.mulu.pcms.dto.request.CategoryRequestDTO;
 import org.mulu.pcms.dto.response.CategoryResponseDTO;
-import org.mulu.pcms.entity.Category;
 
 public interface CategoryService {
     CategoryResponseDTO createCategory(CategoryRequestDTO category);
@@ -15,7 +14,7 @@ public interface CategoryService {
 
     CategoryResponseDTO getCategoryByName(String name);
 
-    CategoryResponseDTO updateCategory(Long id, Category category);
+    CategoryResponseDTO updateCategory(Long id, CategoryRequestDTO category);
 
     void deleteCategory(Long id);
 }

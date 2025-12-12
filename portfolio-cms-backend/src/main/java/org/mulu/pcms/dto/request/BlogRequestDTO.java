@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BlogRequestDTO {
     private String content;
-    private String author;
-    private String image_url;
+    private String imageUrl;
     private String title;
 
 }

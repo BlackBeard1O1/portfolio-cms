@@ -34,3 +34,7 @@ build/
 
 ### Local environment files ###
 .env
+
+# Ignore sensitive application config
+src/main/resources/application.properties
+src/main/resources/application.yml

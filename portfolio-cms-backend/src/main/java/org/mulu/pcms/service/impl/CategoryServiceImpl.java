@@ -53,7 +53,7 @@ public class CategoryServiceImpl  implements CategoryService {
     }
 
     @Override
-    public CategoryResponseDTO updateCategory(Long id, Category category) {
+    public CategoryResponseDTO updateCategory(Long id, CategoryRequestDTO category) {
         Category existingCategory = categoryRepository.findById(id).orElseThrow(() -> new RuntimeException("Category not found"));
 
         categoryMapper.updateCategory(category, existingCategory);

@@ -11,6 +11,6 @@ public class BlogResponseDTO {
     private Long id;
     private String author;
     private String content;
-    private String image_url;
+    private String imageUrl;
     private String title;
 }

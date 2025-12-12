@@ -7,7 +7,7 @@ import org.mulu.pcms.dto.response.ProjectResponseDTO;
 
 public interface ProjectService {
 
-    ProjectResponseDTO createProject(ProjectRequestDTO project);
+    ProjectResponseDTO createProject(ProjectRequestDTO project, String userEmail);
 
     List<ProjectResponseDTO> getAllProjects();
 
